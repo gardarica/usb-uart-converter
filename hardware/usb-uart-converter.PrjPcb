@@ -72,7 +72,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=BGHCCWNI
+DocumentUniqueId=AKMKWXLR
 
 [Document3]
 DocumentPath=pcb.PcbDoc
@@ -90,6 +90,10 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LVHRULSX
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for usb-uart-converter\Design Rule Check - pcb.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
