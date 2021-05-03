@@ -1,49 +1,35 @@
-# USB-UART преобразователь с гальванической изоляцией
+## USB to UART converter with isolation barrier
 
-Проект создан для безопасной отладки силовых преобразователей и иных устройств, работающих с высоким напряжением, через интерфейс UART с помощью функции *printf*. Для изоляции выбран цифровой изолятор от компании Texas Instruments - **ISO7721DR** с напряжением изоляции до 1500В. Основной для конвертера служит популярная микросхема **CP2102** от компании Silabs. 
+The project was created for safe debugging of power converters and other devices operating with high voltage through the UART interface using the _printf_ function. For isolation, a digital isolator from Texas Instruments - _ISO7721DR_ with isolation voltage up to 1500V was chosen. The main converter is the popular _CP2102_ chip from Silabs.
 
-Преобразователь может работать с микроконтроллерами, и иными устройствами, с логическим уровнем 3.3В (например, STM32 и прочие) и 5В (например, ATmega), что делает его универсальным. Выравнивание уровней осуществляется с помощью подачи напряжения с основной платы на преобразователь (вывод VREF).
+The converter can use with microcontrollers and other devices with a logic level of 3.3V (STM32 and others) and 5V (ATmega and others), which makes it universal. Leveling is done by supplying voltage from the main board to the converter (VREF pin).
 
-![3D вид платы](https://habrastorage.org/webt/4p/82/lq/4p82lqaxkefubuul_a-x5edehsq.png)
+![3D view](https://habrastorage.org/webt/4p/82/lq/4p82lqaxkefubuul_a-x5edehsq.png)
 
-# Технические характеристики
+## Features:
 
-* Тип преобразователя: *USB -> UART*
-* Преобразователь: *CP2102*
-* Гальваническая изоляция: *Да*
-* Напряжение изоляции: *1500 В*
-* Логические уровни: *2.5, 3.3 и 5В*
-* Температурный диапазон: *-40...+85°С*
+* Type converter: *USB -> UART*
+* Used IC: *CP2102*
+* Isolation voltage: *1000 V*
+* Logic level: *2.5, 3.3 and 5V*
+* Temperature ranges: *-40...+85°С*
 
-# Структура проекта
+## Project structure:
 
 * Hardware
-    * AltiumProject - исходный проект в AD19
-    * Documents - принципиальная схема в формате PDF и спецификация (BOM)
-    * Manufacture - набор файлов для производства печатной платы (Gerber и NC Drill)
-    * Mechanical - 3D модель устройства
+    * docs - documentation for project: ВОМ, schematic, etc
+    * hardware - source project for design PCB
+    * manufacture - gerber files for order PCB
+    * mechanical - source project for 3D design
 
-# Сборочный чертеж
+## Assembly drawing
 
-![Сборочный чертеж](https://habrastorage.org/webt/1w/ri/xl/1wrixla8gazsne8uvu4e3zncy10.png)
+![Assembly drawing](https://habrastorage.org/webt/sc/ni/yn/scniynm_reas2cklmnus6nzhmgg.png)
 
-# Список компонентов
+## Bill of materials
 
-![](https://habrastorage.org/webt/lp/ez/pp/lpezppswlglgllcdok7hqcqlnf0.png)
+![BOM](https://habrastorage.org/webt/lp/ez/pp/lpezppswlglgllcdok7hqcqlnf0.png)
 
-* Возможные замены компонентов:
-    * *C1, C2, C4* - любой керамический конденсатор в корпусе 0603 на 1 мкФ с рабочим напряжением 6.3В (или выше) и диэлектриком X7R
-    * *С3* - любой керамический конденсатор в корпусе 0603 на 1...10 мкФ с рабочим напряжение 6.3В (или выше) и диэлектриком X7R
-    * *D1* - возможна замена на любой цифровой изоляцией с цоколевкой выводов pin-to-pin, например, от Silabs
-    * *D2* - возможна замена на CP2102-GRM или аналогичный в корпусе QFN-28 размером 5х5 мм
-    * *VD1...VD4* - любой светодиод в корпусе 0603, цвет можно использовать любой
+## License
 
-# Панелизация
-
-Если вы собираетесь изготовить несколько преобразователей, то настоятельно рекомендую воспользоваться готовой панелью из 10 устройств (5х2 платы), что позволит упростить и ускорить монтаж. В папке *Hardware -> Manufacture* располагается исходный проект панели в Altium Designer, а так же уже сформированные Gerber-файлы.
-
-![Панель](https://habrastorage.org/webt/mv/e6/i3/mve6i3tdaac3ytewr4n14u3yepa.png)
-
-# Лицензирование
-
-Все исходные материалы для проекта распространяются по лицензии [MIT](./LICENSE "Описание лицензии"). Вы можете использовать проект в любом виде, в том числе и для коммерческой деятельности, но стоит помнить, что автор проекта не дает никаких гарантий на работоспособность устройства или частей проекта, а так же не несет никакой ответственности по искам или за нанесенный ущерб.
+All source files for the project are distributed under the [MIT](./LICENSE "Text of license") license and you can use the project for commercial activities. But you need remembering that the author of the project does not give any guarantees for the operability of the device or parts of the project and also does not bear no liability for claims or damages.
